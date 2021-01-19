@@ -1,0 +1,1 @@
+2CTG -zadanie1 Callback on javascript
