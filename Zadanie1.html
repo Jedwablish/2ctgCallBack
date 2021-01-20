@@ -7,38 +7,46 @@
 </head>
 
 <body>
+	<div id="box"></div>
     <script type="text/javascript">
     	
 
-    	const sentUserData = () =>{
+    	const sentUserData = (CallBack) =>{
     		setTimeout(()=> {
     			document.getElementById('box').innerHTML += " wysylanie danych <br>";
-    		},3000)
-    	}
-
-
-    	const validateDate = () =>{
-    		setTimeout(()=> {
-    			document.getElementById('box').innerHTML += " 2walidacja danych <br>";
-    		},2500)
-    	}
-
-
-    	const registeruser = () =>{
-    		setTimeout(()=> {
-    			document.getElementById('box').innerHTML += " 3rejestracja danych <br>";
     		},1000)
     	}
 
 
-    	const sendMail = () =>{
+    	const validateData = (CallBack) =>{
+    		setTimeout(()=> {
+    			document.getElementById('box').innerHTML += " 2walidacja danych <br>";
+    		},2000)
+    	}
+
+
+    	const registerUser = (CallBack) =>{
+    		setTimeout(()=> {
+    			document.getElementById('box').innerHTML += " 3rejestracja danych <br>";
+    		},1500)
+    	}
+
+
+    	const sendMail = (CallBack) =>{
     		setTimeout(()=> {
     			document.getElementById('box').innerHTML += "4 wysylanie maila <br>";
     		},1000)
     	}
 
-    	sentUserData();
-    	validate
+    	
+
+        sentUserData(function() {
+            validateData(function(){
+            registerUser (sendMail);
+                });
+        });
+
+
 
     </script>
 </body>

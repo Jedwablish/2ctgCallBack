@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Zadanie 2</title>
+</head>
+
+<body>
+    <div id="box"></div>
+    <script type="text/javascript">
+        
+
+        const krok1 = (CallBack) =>{
+            setTimeout(()=> {
+                document.getElementById('box').innerHTML += " 1 Uruchom <br>";
+                CallBack();
+            },3500)
+        }
+
+
+        const krok2 = (CallBack) =>{
+            setTimeout(()=> {
+                document.getElementById('box').innerHTML += " 2 Sprawdz <br>";
+                  CallBack();
+            },2000)
+        }
+
+
+        const krok3 = (CallBack) =>{
+            setTimeout(()=> {
+                document.getElementById('box').innerHTML += " 3 Wykonaj  <br>";
+                  CallBack();
+            },1500)
+        }
+
+
+        const krok4 = () =>{
+            setTimeout(()=> {
+                document.getElementById('box').innerHTML += "4 Zamknij <br>";
+            },1000)
+        }
+
+        
+
+        krok1(function() {
+            krok2(function(){
+            krok3 (krok4);
+                });
+        });
+
+
+
+    </script>
+</body>
+
+</html
